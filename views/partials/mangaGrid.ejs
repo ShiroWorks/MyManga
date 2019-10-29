@@ -1,0 +1,12 @@
+<% mangaCoverClass = locals.large ? 'manga-cover-large' : '' %> <%
+mangaGridClass = locals.large ? 'manga-grid-large' : '' %>
+<div class="manga-grid <%= mangaGridClass %>">
+  <% mangas.forEach(manga => { %>
+  <a href="/mangas/<%= manga.id %>">
+    <img
+      class="manga-cover <%= mangaCoverClass %>"
+      src="<%= manga.coverImagePath %>"
+    />
+  </a>
+  <% }) %>
+</div>
