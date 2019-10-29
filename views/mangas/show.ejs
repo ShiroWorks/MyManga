@@ -1,0 +1,25 @@
+<h2 class="page-header"><%= manga.title %></h2>
+<div class="manga-details">
+  <div>
+    <img class="manga-cover" src="<%= manga.coverImagePath %>" />
+    <div class="manga-details-btn-grid">
+      <a class="btn btn-primary" href="/mangas/<%= manga.id %>/edit">Edit</a>
+      <%- include('../partials/deleteForm', { url: `/mangas/${manga.id}` }) %>
+      <a
+        class="btn btn-primary manga-details-author-button"
+        href="/authors/<%= manga.author.id %>"
+        >View Author</a
+      >
+    </div>
+  </div>
+  <div class="manga-details-grid">
+    <div class="manga-details-label">Author:</div>
+    <div><%= manga.author.name %></div>
+    <div class="manga-details-label">Publish Date:</div>
+    <div><%= manga.publishDate.toDateString() %></div>
+    <div class="manga-details-label">Page Count:</div>
+    <div><%= manga.pageCount %></div>
+    <div class="manga-details-label">Description:</div>
+    <div><%= manga.description %></div>
+  </div>
+</div>
